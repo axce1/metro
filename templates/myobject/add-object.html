@@ -13,11 +13,13 @@
     <h2>{{error}}</h2>
 {% endif %}
 
-<form   method="post" action="">
+<form   method="post" action="" enctype="multipart/form-data" >
     {% csrf_token %}
     {% bootstrap_form form %}
     {% buttons %}
-    {% bootstrap_button "Сохранить" button_type="submit" button_class="btn-primary" %}
+    <label class="control-label">Select File</label>
+    <input id="input-img" name="input-img" multiple type="file" class="file file-loading"> 
+    {% bootstrap_button "Сохранить" button_type="submit" button_class="btn-primary fileinput-upload fileinput-upload-button" %}
     {% endbuttons %}
 </form>
 {% endblock %}

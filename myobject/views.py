@@ -17,7 +17,7 @@ from django.db.models import Q
 def add_object(request):
     '''Добавление объекта'''
     if request.method == "POST":
-        form = MyObjectForm(request.POST)
+        form = MyObjectForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
             # Есть ли номер в черном списке
