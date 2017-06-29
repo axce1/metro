@@ -118,4 +118,4 @@ def pil_to_django(image, format="JPEG"):
     '''Преобразование изображения из объекта Image в объект Django '''
     fobject = io.BytesIO()
     image.save(fobject, format=format)
-    return ContentFile(fobject.getvalue())
+return ContentFile(fobject.getvalue())
