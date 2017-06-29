@@ -11,7 +11,7 @@ install:
   - "pip install -r req.txt"
 
 before_script:
-  #- "mysql -e 'create database test;' -u root"
+  - "mysql -e 'create database test;' -u root -p password"
   #- "pep8 --exclude=migrations ."
   - "python manage.py runserver"
 
