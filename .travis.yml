@@ -1,0 +1,15 @@
+language: python
+
+python:
+  - "3.4"
+
+install: 
+  - "pip install pep8 --use-mirrors"
+  - "pip install -r req.txt"
+
+before_script:
+  - "pep8 --exclude=migrations ."
+  - "python manage.py runserver"
+
+script:
+  - "python manage.py test"
