@@ -3,11 +3,15 @@ language: python
 python:
   - "3.4"
 
+services:
+  - "mysql"
+
 install: 
   - "pip install pep8 --use-mirrors"
   - "pip install -r req.txt"
 
 before_script:
+  #- "mysql -e 'create database test;' -u root"
   #- "pep8 --exclude=migrations ."
   - "python manage.py runserver"
 
