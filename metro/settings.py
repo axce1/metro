@@ -104,8 +104,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'metrotest',
-        'USER': 'travis',
-        # 'USER': 'root',
+        'USER': 'root',
         'PASSWORD': 'Djwoms18',
         'HOST': 'localhost',
     }
@@ -164,6 +163,20 @@ LOCALE_PATHS = [
 
 DAYS_KEEP_USER_HISTORY_RECORDS = 14
 
+if os.getenv('TRAVIS', None):
+    SECRET_KEY = "SecretKeyForUseOnTravis"
+    DEBUG = False
+    TEMPLATE_DEBUG = True
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'travis_ci_db',
+            'USER': 'travis',
+            'PASSWORD': '',
+            'HOST': '127.0.0.1',
+        }
+    }
 
 try:
     from .local_settings import *
