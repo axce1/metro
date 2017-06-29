@@ -12,8 +12,6 @@ install:
 
 before_script:
   - "mysql -e 'create database test;'"
-  # wtf!?!?!?
-  - "mysql -u root -e "CREATE USER 'root'@'localhost' IDENTIFIED BY 'root';""
   #- "pep8 --exclude=migratioecs ."
   - "python manage.py migrate"
   - "python manage.py runserver"

@@ -104,7 +104,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'metrotest',
-        'USER': 'root',
+        'USER': 'travis',
+        # 'USER': 'root',
         'PASSWORD': 'Djwoms18',
         'HOST': 'localhost',
     }
